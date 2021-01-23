@@ -1,0 +1,20 @@
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:23453
+  enhanced-mode: redir-host 
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://223.5.5.5/dns-query
+  fallback:
+    - tls://1.1.1.1:853
+    - tls://dns.google
+  fallback-filter:
+    geoip: true
+    ipcidr:
+      - 240.0.0.0/4
+    domain:
+      - '+.google.com'
+      - '+.googleapis.cn'
+      - '+.facebook.com'
+      - '+.youtube.com'
