@@ -1,10 +1,17 @@
 #!/bin/sh
 
-export KSROOT=/koolshare
-source $KSROOT/scripts/base.sh
+KSROOT=/koolshare
+KSSCRIPTS=$KSROOT/scripts
+
+# 配置环境
+. $KSSCRIPTS/base.sh
 eval $(dbus export merlinclash_)
 alias echo_date='echo 【$(date +%Y年%m月%d日\ %X)】:'
-LOG_FILE=/tmp/upload/merlinclash_log.txt
+
+UPLOAD_DIR=/tmp/upload
+
+LOG_FILE=$UPLOAD_DIR/merlinclash_log.txt
+
 lan_ip=$(nvram get lan_ipaddr)
 uploadpath=/tmp/upload/yaml
 fp=/koolshare/merlinclash/yaml_bak
