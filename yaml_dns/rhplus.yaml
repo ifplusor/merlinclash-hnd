@@ -12,5 +12,6 @@ dns:
   # 所有 DNS 请求将会直接发送到服务器，不经过任何代理。
   # Clash 会使用最先获得的解析记录回复 DNS 请求
   nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+    - https://dns.google/dns-query
+    #- https://doh.pub/dns-query
+    #- https://dns.alidns.com/dns-query
